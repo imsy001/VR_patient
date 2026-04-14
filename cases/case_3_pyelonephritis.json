@@ -1,14 +1,68 @@
 {
   "case_title": "Acute Pyelonephritis",
-  "name": "이수진",
-  "age": 31,
-  "sex": "여자",
+  "patient_info": {
+    "name": "이수진",
+    "age": 31,
+    "sex": "female"
+  },
+  "vital_signs": {
+    "blood_pressure": "115/70 mmHg",
+    "pulse_rate": "102 /min",
+    "respiratory_rate": "22 /min",
+    "temperature": "38.7 °C"
+  },
   "chief_complaint": "옆구리가 아프고 열이 나서",
-  "onset": "이틀 전부터 그랬어요.",
-  "location": "오른쪽 옆구리가 아파요.",
-  "character": "묵직하게 아프고 쑤시는 느낌이에요.",
-  "severity": "10점 만점에 6점 정도예요.",
-  "associated_symptoms": ["열", "오한", "배뇨 시 불편감"],
-  "denied_symptoms": ["흉통", "설사"],
-  "past_history": ["방광염이 몇 번 있었어요."]
+  "history_taking": {
+    "onset": "이틀 전부터 그랬어요.",
+    "location": "오른쪽 옆구리가 아파요.",
+    "duration": "이틀 전부터 계속 아팠어요.",
+    "course": "시간이 지나면서 점점 더 심해졌어요.",
+    "character": "묵직하게 아프고 쑤시는 느낌이에요.",
+    "severity": "10점 만점에 6점 정도예요.",
+    "migration": "다른 데서 시작한 건 아니고 처음부터 옆구리가 아팠어요.",
+    "referred_pain": "아랫배 쪽도 약간 불편한 느낌이 있어요.",
+    "associated_symptoms": [
+      "발열",
+      "오한",
+      "배뇨 시 불편감",
+      "빈뇨"
+    ],
+    "aggravating_factors": [
+      "움직이면 더 아파요",
+      "옆구리를 두드리면 더 아파요"
+    ],
+    "relieving_factors": [
+      "가만히 있으면 조금 나아요",
+      "누워 있으면 조금 덜 아파요"
+    ]
+  },
+  "denied_symptoms": [
+    "흉통",
+    "설사"
+  ],
+  "past_history": {
+    "trauma": "없어요",
+    "hospitalization": "없어요",
+    "medical_history": {
+      "HTN": "없어요",
+      "DM": "없어요",
+      "TB": "없어요",
+      "hepatitis": "없어요"
+    },
+    "medication": "현재 복용 중인 약은 없어요",
+    "social_history": {
+      "alcohol": "가끔 마셔요",
+      "smoking": "안 해요",
+      "coffee": "하루 1~2잔 마셔요",
+      "occupation": "회사원이에요"
+    },
+    "family_history": "특별한 가족력은 없어요",
+    "gynecologic_history": {
+      "LMP": "3주 전이에요",
+      "menstrual_cycle": "규칙적이에요",
+      "pregnancy_possibility": "없어요"
+    }
+  },
+  "similar_episode": "예전에 방광염이 몇 번 있었어요",
+  "previous_examination": ""
 }

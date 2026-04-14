@@ -1,14 +1,66 @@
 {
   "case_title": "Acute Appendicitis",
-  "name": "김영희",
-  "age": 23,
-  "sex": "여자",
+  "patient_info": {
+    "name": "김영희",
+    "age": 23,
+    "sex": "female"
+  },
+  "vital_signs": {
+    "blood_pressure": "110/70 mmHg",
+    "pulse_rate": "96 /min",
+    "respiratory_rate": "20 /min",
+    "temperature": "38.1 °C"
+  },
   "chief_complaint": "배가 아파서",
-  "onset": "한 6시간 전부터 아팠어요.",
-  "location": "오른쪽 아랫배가 아파요.",
-  "character": "콕콕 찌르는 것처럼 아파요.",
-  "severity": "10점 만점에 7점 정도예요.",
-  "associated_symptoms": ["메스꺼움", "식욕부진"],
-  "denied_symptoms": ["설사", "흉통"],
-  "past_history": ["수술한 적은 없어요."]
+  "history_taking": {
+    "onset": "한 6시간 전부터 아팠어요.",
+    "location": "지금은 오른쪽 아랫배가 아파요.",
+    "duration": "6시간 정도 계속 아팠어요.",
+    "course": "시간이 지날수록 점점 더 아파졌어요.",
+    "character": "콕콕 찌르는 것처럼 아파요.",
+    "severity": "10점 만점에 7점 정도예요.",
+    "migration": "처음에는 배꼽 주변이 아프다가 점점 오른쪽 아랫배로 내려왔어요.",
+    "referred_pain": "다른 데로 퍼지는 느낌은 없어요.",
+    "associated_symptoms": [
+      "메스꺼움",
+      "식욕부진"
+    ],
+    "aggravating_factors": [
+      "움직일 때 더 아파요",
+      "걸을 때 더 아파요",
+      "기침하거나 힘주면 더 아파요"
+    ],
+    "relieving_factors": [
+      "가만히 있으면 조금 나아요",
+      "무릎을 구부리고 있으면 덜 아파요"
+    ]
+  },
+  "denied_symptoms": [
+    "설사",
+    "흉통",
+    "구토"
+  ],
+  "past_history": {
+    "trauma": "없어요",
+    "hospitalization": "없어요",
+    "medical_history": {
+      "HTN": "없어요",
+      "DM": "없어요",
+      "TB": "없어요",
+      "hepatitis": "없어요"
+    },
+    "medication": "복용 중인 약은 없어요",
+    "social_history": {
+      "alcohol": "가끔 한두 잔 마셔요",
+      "smoking": "안 해요",
+      "coffee": "하루에 한 잔 정도 마셔요",
+      "occupation": "대학생이에요"
+    },
+    "family_history": "특별한 병력은 없어요",
+    "gynecologic_history": {
+      "LMP": "2주 전이에요",
+      "menstrual_cycle": "규칙적이에요",
+      "pregnancy_possibility": "아니요, 없어요"
+    }
+  }
 }

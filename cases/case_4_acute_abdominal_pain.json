@@ -1,0 +1,64 @@
+{
+  "case_title": "급성 복통",
+  "patient_info": {
+    "name": "서승윤",
+    "age": 31,
+    "sex": "female"
+  },
+  "vital_signs": {
+    "blood_pressure": "144/90 mmHg",
+    "pulse_rate": "90 /min",
+    "respiratory_rate": "22 /min",
+    "temperature": "38.2 °C"
+  },
+  "chief_complaint": "배가 아파요",
+  "history_taking": {
+    "onset": "3일 전",
+    "location": "오른쪽 아랫배",
+    "duration": "3일 전부터 지속",
+    "course": "통증이 점점 심해짐",
+    "character": "묵직하고 쑤시는 느낌",
+    "severity": "10점 만점에 6점",
+    "migration": "처음에는 배꼽 주변이 아프다가 점점 오른쪽 아랫배로 이동",
+    "referred_pain": "없음",
+    "associated_symptoms": [
+      "발열",
+      "설사 (어제 한 번 무른 변)"
+    ],
+    "aggravating_factors": [
+      "걸을 때 심해짐",
+      "누울 때 심해짐",
+      "차렷 자세로 있을 때 심해짐"
+    ],
+    "relieving_factors": [
+      "앞으로 숙일 때 나아짐",
+      "가만히 있을 때 나아짐"
+    ]
+  },
+  "similar_episode": "1년 전에 복부 전체 통증 경험",
+  "previous_examination": "2년 전에 내시경 검사 정상",
+  "denied_symptoms": [],
+  "past_history": {
+    "trauma": "없음",
+    "hospitalization": "없음",
+    "medical_history": {
+      "HTN": "없음",
+      "DM": "없음",
+      "TB": "없음",
+      "hepatitis": "없음"
+    },
+    "medication": "",
+    "social_history": {
+      "alcohol": "일주일에 소주 1병",
+      "smoking": "안 핌",
+      "coffee": "매일 1~2잔",
+      "occupation": "교사"
+    },
+    "family_history": "",
+    "gynecologic_history": {
+      "LMP": "3주 전",
+      "menstrual_cycle": "정상",
+      "pregnancy_possibility": "없음"
+    }
+  }
+}

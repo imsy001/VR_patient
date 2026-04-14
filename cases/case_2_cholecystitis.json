@@ -1,14 +1,65 @@
 {
   "case_title": "Acute Cholecystitis",
-  "name": "박민수",
-  "age": 45,
-  "sex": "남자",
+  "patient_info": {
+    "name": "박민수",
+    "age": 45,
+    "sex": "male"
+  },
+  "vital_signs": {
+    "blood_pressure": "150/90 mmHg",
+    "pulse_rate": "98 /min",
+    "respiratory_rate": "20 /min",
+    "temperature": "38.0 °C"
+  },
   "chief_complaint": "오른쪽 윗배가 아파서",
-  "onset": "어제 저녁부터 아팠어요.",
-  "location": "오른쪽 윗배가 아파요.",
-  "character": "쥐어짜는 것처럼 계속 아파요.",
-  "severity": "10점 만점에 8점 정도예요.",
-  "associated_symptoms": ["메스꺼움", "구토"],
-  "denied_symptoms": ["설사", "흉통"],
-  "past_history": ["고혈압이 있어요."]
+  "history_taking": {
+    "onset": "어제 저녁부터 아팠어요.",
+    "location": "오른쪽 윗배가 아파요.",
+    "duration": "어제 저녁부터 계속 아팠어요.",
+    "course": "시간이 지나도 계속 아프고 점점 심해졌어요.",
+    "character": "쥐어짜는 것처럼 계속 아파요.",
+    "severity": "10점 만점에 8점 정도예요.",
+    "migration": "다른 곳에서 시작한 건 아니고 오른쪽 윗배가 계속 아팠어요.",
+    "referred_pain": "오른쪽 어깨 쪽으로 뻗치는 느낌이 조금 있어요.",
+    "associated_symptoms": [
+      "메스꺼움",
+      "구토"
+    ],
+    "aggravating_factors": [
+      "움직이면 더 아파요",
+      "숨 크게 쉬면 더 아파요",
+      "기름진 음식 먹고 더 심해졌어요"
+    ],
+    "relieving_factors": [
+      "가만히 있으면 조금 덜 아파요",
+      "금식하고 있으면 조금 나은 것 같아요"
+    ]
+  },
+  "denied_symptoms": [
+    "설사",
+    "흉통"
+  ],
+  "past_history": {
+    "trauma": "없어요",
+    "hospitalization": "없어요",
+    "medical_history": {
+      "HTN": "있어요",
+      "DM": "없어요",
+      "TB": "없어요",
+      "hepatitis": "없어요"
+    },
+    "medication": "혈압약 먹고 있어요",
+    "social_history": {
+      "alcohol": "가끔 술 마셔요",
+      "smoking": "예전에 피웠는데 지금은 안 펴요",
+      "coffee": "하루에 1잔 정도 마셔요",
+      "occupation": "회사원이에요"
+    },
+    "family_history": "특별한 가족력은 없어요",
+    "gynecologic_history": {
+      "LMP": "",
+      "menstrual_cycle": "",
+      "pregnancy_possibility": ""
+    }
+  }
 }
