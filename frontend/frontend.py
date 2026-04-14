@@ -84,7 +84,7 @@ def now_str():
 def make_initial_messages():
     return [{
         "role": "assistant",
-        "content": "안녕하세요 선생님. 무엇이 불편해서 오셨나요?",
+        "content": "안녕하세요 선생님.",
         "timestamp": now_str(),
     }]
 

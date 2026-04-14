@@ -4,7 +4,6 @@ from typing import Any
 
 CASES_DIR = Path(__file__).resolve().parent.parent.parent / "cases"
 
-# 새 JSON schema 기준 required fields
 REQUIRED_TOP_LEVEL_FIELDS = [
     "case_title",
     "patient_info",
@@ -49,7 +48,6 @@ REQUIRED_PAST_HISTORY_FIELDS = [
     "medication",
     "social_history",
     "family_history",
-    "gynecologic_history",
 ]
 
 REQUIRED_MEDICAL_HISTORY_FIELDS = [
@@ -85,6 +83,18 @@ def _require_list(case_id: str, obj: Any, field_name: str) -> list:
     return obj
 
 
+def _require_str(case_id: str, obj: Any, field_name: str) -> str:
+    if not isinstance(obj, str):
+        raise ValueError(f"Case '{case_id}' field '{field_name}' must be a string")
+    return obj
+
+
+def _require_int(case_id: str, obj: Any, field_name: str) -> int:
+    if not isinstance(obj, int):
+        raise ValueError(f"Case '{case_id}' field '{field_name}' must be an integer")
+    return obj
+
+
 def _check_required_fields(case_id: str, data: dict, required_fields: list[str], parent_name: str) -> None:
     missing = [field for field in required_fields if field not in data]
     if missing:
@@ -97,59 +107,79 @@ def validate_case(case_id: str, case_data: dict) -> None:
     if not isinstance(case_data, dict):
         raise ValueError(f"Case '{case_id}' must be a JSON object")
 
-    # 1. top-level fields
     _check_required_fields(case_id, case_data, REQUIRED_TOP_LEVEL_FIELDS, "root")
 
-    # 2. patient_info
+    _require_str(case_id, case_data["case_title"], "case_title")
+    _require_str(case_id, case_data["chief_complaint"], "chief_complaint")
+
     patient_info = _require_dict(case_id, case_data["patient_info"], "patient_info")
     _check_required_fields(case_id, patient_info, REQUIRED_PATIENT_INFO_FIELDS, "patient_info")
+    _require_str(case_id, patient_info["name"], "patient_info.name")
+    _require_int(case_id, patient_info["age"], "patient_info.age")
+    _require_str(case_id, patient_info["sex"], "patient_info.sex")
 
-    # 3. vital_signs
     vital_signs = _require_dict(case_id, case_data["vital_signs"], "vital_signs")
     _check_required_fields(case_id, vital_signs, REQUIRED_VITAL_SIGNS_FIELDS, "vital_signs")
+    for key in REQUIRED_VITAL_SIGNS_FIELDS:
+        _require_str(case_id, vital_signs[key], f"vital_signs.{key}")
 
-    # 4. history_taking
     history_taking = _require_dict(case_id, case_data["history_taking"], "history_taking")
     _check_required_fields(case_id, history_taking, REQUIRED_HISTORY_TAKING_FIELDS, "history_taking")
+
+    for key in [
+        "onset",
+        "location",
+        "duration",
+        "course",
+        "character",
+        "severity",
+        "migration",
+        "referred_pain",
+    ]:
+        _require_str(case_id, history_taking[key], f"history_taking.{key}")
 
     _require_list(case_id, history_taking["associated_symptoms"], "history_taking.associated_symptoms")
     _require_list(case_id, history_taking["aggravating_factors"], "history_taking.aggravating_factors")
     _require_list(case_id, history_taking["relieving_factors"], "history_taking.relieving_factors")
 
-    # 5. denied_symptoms
     _require_list(case_id, case_data["denied_symptoms"], "denied_symptoms")
 
-    # 6. past_history
     past_history = _require_dict(case_id, case_data["past_history"], "past_history")
     _check_required_fields(case_id, past_history, REQUIRED_PAST_HISTORY_FIELDS, "past_history")
 
+    _require_str(case_id, past_history["trauma"], "past_history.trauma")
+    _require_str(case_id, past_history["hospitalization"], "past_history.hospitalization")
+    _require_str(case_id, past_history["medication"], "past_history.medication")
+    _require_str(case_id, past_history["family_history"], "past_history.family_history")
+
     medical_history = _require_dict(case_id, past_history["medical_history"], "past_history.medical_history")
-    _check_required_fields(
-        case_id,
-        medical_history,
-        REQUIRED_MEDICAL_HISTORY_FIELDS,
-        "past_history.medical_history",
-    )
+    _check_required_fields(case_id, medical_history, REQUIRED_MEDICAL_HISTORY_FIELDS, "past_history.medical_history")
+    for key in REQUIRED_MEDICAL_HISTORY_FIELDS:
+        _require_str(case_id, medical_history[key], f"past_history.medical_history.{key}")
 
     social_history = _require_dict(case_id, past_history["social_history"], "past_history.social_history")
-    _check_required_fields(
-        case_id,
-        social_history,
-        REQUIRED_SOCIAL_HISTORY_FIELDS,
-        "past_history.social_history",
-    )
+    _check_required_fields(case_id, social_history, REQUIRED_SOCIAL_HISTORY_FIELDS, "past_history.social_history")
+    for key in REQUIRED_SOCIAL_HISTORY_FIELDS:
+        _require_str(case_id, social_history[key], f"past_history.social_history.{key}")
 
-    gynecologic_history = _require_dict(
-        case_id,
-        past_history["gynecologic_history"],
-        "past_history.gynecologic_history",
-    )
-    _check_required_fields(
-        case_id,
-        gynecologic_history,
-        REQUIRED_GYNECOLOGIC_HISTORY_FIELDS,
-        "past_history.gynecologic_history",
-    )
+    sex = patient_info["sex"].strip().lower()
+    if sex == "female":
+        if "gynecologic_history" not in past_history:
+            raise ValueError(f"Case '{case_id}' missing fields in 'past_history': gynecologic_history")
+
+        gynecologic_history = _require_dict(
+            case_id,
+            past_history["gynecologic_history"],
+            "past_history.gynecologic_history",
+        )
+        _check_required_fields(
+            case_id,
+            gynecologic_history,
+            REQUIRED_GYNECOLOGIC_HISTORY_FIELDS,
+            "past_history.gynecologic_history",
+        )
+        for key in REQUIRED_GYNECOLOGIC_HISTORY_FIELDS:
+            _require_str(case_id, gynecologic_history[key], f"past_history.gynecologic_history.{key}")
 
 
 def load_all_cases() -> dict[str, dict]:
