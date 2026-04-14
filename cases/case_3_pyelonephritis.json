@@ -1,0 +1,14 @@
+{
+  "case_title": "Acute Pyelonephritis",
+  "name": "이수진",
+  "age": 31,
+  "sex": "여자",
+  "chief_complaint": "옆구리가 아프고 열이 나서",
+  "onset": "이틀 전부터 그랬어요.",
+  "location": "오른쪽 옆구리가 아파요.",
+  "character": "묵직하게 아프고 쑤시는 느낌이에요.",
+  "severity": "10점 만점에 6점 정도예요.",
+  "associated_symptoms": ["열", "오한", "배뇨 시 불편감"],
+  "denied_symptoms": ["흉통", "설사"],
+  "past_history": ["방광염이 몇 번 있었어요."]
+}

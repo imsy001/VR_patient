@@ -1,0 +1,14 @@
+{
+  "case_title": "Acute Cholecystitis",
+  "name": "박민수",
+  "age": 45,
+  "sex": "남자",
+  "chief_complaint": "오른쪽 윗배가 아파서",
+  "onset": "어제 저녁부터 아팠어요.",
+  "location": "오른쪽 윗배가 아파요.",
+  "character": "쥐어짜는 것처럼 계속 아파요.",
+  "severity": "10점 만점에 8점 정도예요.",
+  "associated_symptoms": ["메스꺼움", "구토"],
+  "denied_symptoms": ["설사", "흉통"],
+  "past_history": ["고혈압이 있어요."]
+}

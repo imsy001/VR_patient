@@ -1,0 +1,14 @@
+{
+  "case_title": "Acute Appendicitis",
+  "name": "김영희",
+  "age": 23,
+  "sex": "여자",
+  "chief_complaint": "배가 아파서",
+  "onset": "한 6시간 전부터 아팠어요.",
+  "location": "오른쪽 아랫배가 아파요.",
+  "character": "콕콕 찌르는 것처럼 아파요.",
+  "severity": "10점 만점에 7점 정도예요.",
+  "associated_symptoms": ["메스꺼움", "식욕부진"],
+  "denied_symptoms": ["설사", "흉통"],
+  "past_history": ["수술한 적은 없어요."]
+}
